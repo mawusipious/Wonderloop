@@ -1,0 +1,13 @@
+services:
+  wonderloop-api:
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - wonderloop-data:/app/backend/data
+      - wonderloop-output:/app/backend/output
+    ports:
+      - "8000:8000"
+volumes:
+  wonderloop-data:
+  wonderloop-output:
